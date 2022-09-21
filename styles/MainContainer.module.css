@@ -1,0 +1,11 @@
+.container {
+  min-height: 60vh;
+  padding: 20px;
+  text-align: center;
+  /* background: url(../public/bg.jpeg) center / cover no-repeat; */
+}
+
+.bg {
+  background: url(../public/bg.jpeg) center / contain no-repeat;
+  opacity: 0.25;
+}
