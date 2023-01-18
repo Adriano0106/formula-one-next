@@ -8,6 +8,8 @@ const Table = styled.table`
   display: inline-table;
 `;
 
+let order = "asc";
+
 const Drivers: NextPage = () => {
   const [driverList, setDriverList] = useState([]);
 
@@ -33,33 +35,39 @@ const Drivers: NextPage = () => {
     return 0;
   };
 
-  const callDrivers = (type: String) => {
-    if (type == "order-asc") {
-      driverList.sort(orderAsc);
+  const reorderDrivers = (list: any) => {
+    if (order == "desc") {
+      list.sort(orderAsc);
+      order = "asc";
+    } else if (order == "asc") {
+      list.sort(orderDesc);
+      order = "desc";
     }
-    if (type == "order-desc") {
-      driverList.sort(orderDesc);
-    }
-    return driverList.map((item: any) => {
-      console.log(item.permanentNumber);
-      return <Driver key={item?.permanentNumber} items={item} />;
-    });
+
+    setDriverList([...list]);
   };
 
   return (
     <Table>
       <thead>
         <tr>
-          <th className="drivers--number standard" onClick={() => callDrivers("order-asc")}>Número</th>
+          <th
+            className="drivers--number standard"
+            onClick={() => reorderDrivers(driverList)}
+          >
+            Número
+          </th>
           <th>Piloto</th>
           <th>Código</th>
           <th>Nacionalidade</th>
           <th>Página</th>
         </tr>
       </thead>
-      <tbody className="drivers--list">
-        {callDrivers("order-asc")}
-        </tbody>
+      <tbody className="drivers--list">{
+        driverList.map((driver: any) => {
+          return <Driver key={driver?.permanentNumber} items={driver}/>
+        })
+      }</tbody>
     </Table>
   );
 };
