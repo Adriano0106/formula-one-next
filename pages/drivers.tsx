@@ -15,7 +15,8 @@ const Drivers: NextPage = () => {
 
   useEffect(() => {
     const loadAll = async () => {
-      let list = await Request.driversList(2022);
+      var actualYear = new Date().getFullYear()
+      let list = await Request.driversList(actualYear);
       let data = list[0].items;
       setDriverList(data);
     };

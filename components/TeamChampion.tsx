@@ -2,8 +2,9 @@ import Link from "next/link";
 import styles from "styles/Driver.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import { TeamChampionInfo } from "interfaces/interfaces"
 
-const TeamChampion = (team: any) => {
+const TeamChampion = (team: TeamChampionInfo) => {
   return (
     <tr className={styles.driver}>
       <td>{team?.items?.season}</td>

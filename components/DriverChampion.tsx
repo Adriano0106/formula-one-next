@@ -2,35 +2,7 @@ import Link from "next/link";
 import styles from "styles/Driver.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { UrlObject } from "url";
-
-interface TeamInfo {
-  constructor: String,
-  name: String,
-  nationality: String,
-  url: UrlObject
-}
-interface DriverInfo {
-  code?: String,
-  dateOfBirth: String,
-  driverId?: String,
-  familyName: String,
-  givenName: String,
-  nationality: String,
-  permanentNumber?: String,
-  url: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
-}
-interface StandingsInfo {
-  Constructors: Array<TeamInfo>,
-  Driver: DriverInfo,
-}
-interface DriverChampionInfo {
-  items: {
-    DriverStandings: Array<StandingsInfo>;
-    round: String;
-    season: String;
-  };
-}
+import { DriverChampionInfo } from "interfaces/interfaces"
 
 const DriverChampion = (driver: DriverChampionInfo) => {
   console.log(driver);

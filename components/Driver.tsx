@@ -2,20 +2,7 @@ import Link from "next/link";
 import styles from "styles/Driver.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { UrlObject } from "url";
-
-interface DriverInfo {
-  items: {
-    code: String,
-    dateOfBirth: String,
-    driverId: String,
-    familyName: String,
-    givenName: String,
-    nationality: String,
-    permanentNumber: String,
-    url: UrlObject
-  }
-}
+import { DriverInfo } from 'interfaces/interfaces';
 
 const Driver = (driver: DriverInfo) => {
   return (

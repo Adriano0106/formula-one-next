@@ -2,18 +2,9 @@ import Link from "next/link";
 import styles from "styles/Team.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { UrlObject } from "url";
+import { TeamsInfo } from "interfaces/interfaces";
 
-interface TeamInfo {
-  items: {
-    constructor: String,
-    name: String,
-    nationality: String,
-    url: UrlObject
-  }
-}
-
-const Team = (team: TeamInfo) => {
+const Team = (team: TeamsInfo) => {
   return (
     <tr className={styles.team}>
       <td>{team?.items?.name}</td>
