@@ -5,7 +5,6 @@ import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { DriverChampionInfo } from "interfaces/interfaces"
 
 const DriverChampion = (driver: DriverChampionInfo) => {
-  console.log(driver);
   return (
     <tr className={styles.driver}>
       <td>{driver?.items?.season}</td>

@@ -22,13 +22,13 @@ export interface TeamInfo {
 
 export interface DriverInfo {
   code?: String,
-  dateOfBirth: String,
+  dateOfBirth?: String,
   driverId?: String,
-  familyName: String,
-  givenName: String,
-  nationality: String,
+  familyName?: String,
+  givenName?: String,
+  nationality?: String,
   permanentNumber?: String,
-  url: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
+  url?: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
 }
 
 export interface StandingsInfo {

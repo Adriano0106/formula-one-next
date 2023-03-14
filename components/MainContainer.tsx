@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import Navbar from "./Navbar";
+import NavbarBootstrap from "./Navbar";
 import Footer from "./Footer";
 import styles from "../styles/MainContainer.module.css";
 
@@ -11,7 +11,7 @@ const MainContainer = ({ children }: Props) => {
   return (
     <div>
       <div className="bg">
-        <Navbar />
+        <NavbarBootstrap />
         <div className={styles.container}>{children}</div>
         <Footer />
       </div>

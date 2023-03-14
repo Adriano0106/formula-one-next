@@ -1,11 +1,12 @@
 import Link from "next/link";
 import styles from "styles/Footer.module.css";
+import Card from "react-bootstrap/Card";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <p>Adriano Andrade &copy; 2022</p>
-    </footer>
+    <Card className={`${styles.footer} text-center`}>
+      <Card.Footer className={`text-muted`}>Desenvolvido por: Adriano Andrade da Silva</Card.Footer>
+    </Card>
   );
 };
 
