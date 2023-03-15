@@ -1,4 +1,4 @@
-const API_BASE = "http://ergast.com/api/f1";
+const API_BASE = "https://ergast.com/api/f1";
 
 const requestAPI = async (endpoint: String, type: String) => {
   const req = await fetch(`${API_BASE}${endpoint}`);
