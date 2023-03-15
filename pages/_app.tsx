@@ -1,13 +1,24 @@
 import "styles/globals.css";
 import MainContainer from "components/MainContainer";
 import type { AppProps } from "next/app";
-
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <MainContainer>
-      <Component {...pageProps} />
-    </MainContainer>
+    <div>
+      <Head>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Meta description for Formula One Next App"
+        />
+        <title>Formula One Next</title>
+      </Head>
+      <MainContainer>
+        <Component {...pageProps} />
+      </MainContainer>
+    </div>
   );
 }
 
