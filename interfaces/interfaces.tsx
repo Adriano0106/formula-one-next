@@ -1,34 +1,34 @@
 import { UrlObject } from "url";
 
-export interface DriverInfo {
+export interface DriversInfo {
   items: {
-    code: String,
-    dateOfBirth: String,
-    driverId: String,
-    familyName: String,
-    givenName: String,
-    nationality: String,
-    permanentNumber: String,
-    url: UrlObject
+    code: String | "N/A",
+    dateOfBirth: String | "N/A",
+    driverId: String | "N/A",
+    familyName: String | "N/A",
+    givenName: String | "N/A",
+    nationality: String | "N/A",
+    permanentNumber: String | "N/A",
+    url: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
   }
 }
 
 export interface TeamInfo {
-  constructor: String,
-  name: String,
-  nationality: String,
-  url: UrlObject
+  constructor: String | "N/A",
+  name: String | "N/A",
+  nationality: String | "N/A",
+  url: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
 }
 
 export interface DriverInfo {
-  code?: String,
-  dateOfBirth?: String,
-  driverId?: String,
-  familyName?: String,
-  givenName?: String,
-  nationality?: String,
-  permanentNumber?: String,
-  url?: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
+  code: String | "N/A",
+  dateOfBirth: String | "N/A",
+  driverId: String | "N/A",
+  familyName: String | "N/A",
+  givenName: String | "N/A",
+  nationality: String | "N/A",
+  permanentNumber: String | "N/A",
+  url: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
 }
 
 export interface StandingsInfo {
@@ -39,8 +39,8 @@ export interface StandingsInfo {
 export interface DriverChampionInfo {
   items: {
     DriverStandings: Array<StandingsInfo>;
-    round: String;
-    season: String;
+    round: String | "N/A";
+    season: String | "N/A";
   };
 }
 
@@ -55,7 +55,7 @@ export interface StandingsInfoConstructors {
 export interface TeamChampionInfo {
   items: {
     ConstructorStandings: Array<StandingsInfoConstructors>;
-    round: String;
-    season: String;
+    round: String | "N/A";
+    season: String | "N/A";
   };
 }

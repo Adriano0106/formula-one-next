@@ -2,9 +2,9 @@ import Link from "next/link";
 import styles from "styles/Driver.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { DriverInfo } from 'interfaces/interfaces';
+import { DriversInfo } from 'interfaces/interfaces';
 
-const Driver = (driver: DriverInfo) => {
+const Driver = (driver: DriversInfo) => {
   return (
     <tr className={styles.driver}>
       <td>{driver?.items?.permanentNumber}</td>

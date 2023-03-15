@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Driver from "components/Driver";
 import Request from "components/Request";
 import styled from "styled-components";
-import { DriverInfo } from "interfaces/interfaces";
+import { DriverInfo, DriversInfo } from "interfaces/interfaces";
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -16,7 +16,7 @@ import Col from "react-bootstrap/Col";
 let order = "desc";
 
 const Drivers: NextPage = () => {
-  const [driverList, setDriverList] = useState([]);
+  const [driverList, setDriverList] = useState(Array<DriverInfo>);
 
   useEffect(() => {
     const loadAll = async () => {

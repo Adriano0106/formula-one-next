@@ -4,13 +4,14 @@ import Link from "next/link";
 import Team from "components/Team";
 import Request from "components/Request";
 import styled from "styled-components";
+import { TeamInfo } from "interfaces/interfaces";
 
 const Table = styled.table`
   display: inline-table;
 `;
 
 const Teams: NextPage = () => {
-  const [teamList, setTeamList] = useState([]);
+  const [teamList, setTeamList] = useState(Array<TeamInfo>);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -32,9 +33,9 @@ const Teams: NextPage = () => {
           </tr>
         </thead>
         <tbody className="drivers--list">
-          {teamList.map((item: any, index: Number) => {
+          {teamList.map((item: TeamInfo, index: Number) => {
             return (
-              <Team key={index} items={item} />
+              <Team key={Number(index)} items={item} />
             )
           })}
         </tbody>
