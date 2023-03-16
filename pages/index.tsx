@@ -6,7 +6,9 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Badge from "react-bootstrap/Badge";
 
 const Title = styled.h1`
-  color: red;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 20px
 `;
 
 const Home: NextPage = () => {
@@ -14,7 +16,7 @@ const Home: NextPage = () => {
     <BasicLayout>
       <Title>Página feita em Next referente a Fórmula 1</Title>
 
-      <ListGroup>
+      <ListGroup className={styles.listgroup}>
         <ListGroup.Item active>
           Aqui você encontrará informações referentes aos seguintes tópicos:
         </ListGroup.Item>
@@ -28,7 +30,7 @@ const Home: NextPage = () => {
         </ListGroup.Item>
         {/* <ListGroup.Item disabled> Morbi leo risus</ListGroup.Item> */}
       </ListGroup> <br />
-      <ListGroup>
+      <ListGroup className={styles.listgroup}>
         <ListGroup.Item active>Tecnologias utilizadas</ListGroup.Item>
         <ListGroup.Item>Next</ListGroup.Item>
         <ListGroup.Item>React</ListGroup.Item>

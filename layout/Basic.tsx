@@ -11,9 +11,9 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
-  h1 {
-    color: yellow !important;
-  }
+  // h1 {
+  //   color: yellow !important;
+  // }
 `;
 
 const BasicLayout = ({ children }: { children: any }) => {
