@@ -76,7 +76,7 @@ const Drivers: NextPage = () => {
         <option value="2014">2014</option>
       </Form.Select>
       <br />
-      <Table striped bordered hover size="sm">
+      <Table responsive striped bordered hover size="sm">
         <thead>
           <tr>
             <th
