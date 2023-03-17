@@ -47,6 +47,7 @@ const Teams: NextPage = () => {
         <option value="2015">2015</option>
         <option value="2014">2014</option>
       </Form.Select>
+      <br />
       <Table responsive striped bordered hover size="sm">
         <thead>
           <tr>
