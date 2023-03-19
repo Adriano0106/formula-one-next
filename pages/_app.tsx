@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Meta description for Formula One Next App"
+          content="Informações dos pilotos/equipes atuais e campeões da Fórmula 1"
         />
         <title>Formula One Next</title>
       </Head>
