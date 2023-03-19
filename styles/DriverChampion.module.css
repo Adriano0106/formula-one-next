@@ -1,0 +1,9 @@
+.driver_champion__card {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.driver_champion__container {
+  margin-bottom: 30px;
+}

@@ -1,0 +1,9 @@
+.team_champion__card {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.team_champion__container {
+  margin-bottom: 30px;
+}

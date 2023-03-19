@@ -3,10 +3,8 @@ import React, { useEffect, useState } from "react";
 import TeamChampion from "components/TeamChampion";
 import Request from "components/Request";
 import styled from "styled-components";
-
-const Table = styled.table`
-  display: inline-table;
-`;
+import styles from "styles/TeamChampion.module.css";
+import Container from "react-bootstrap/Container";
 
 const TeamsChampions: NextPage = () => {
   const [teamList, setTeamList] = useState([]);
@@ -22,24 +20,12 @@ const TeamsChampions: NextPage = () => {
   }, []);
 
   return (
-      <Table>
-        <thead>
-          <tr>
-            <th>Ano</th>
-            <th>Equipe</th>
-            <th>Nacionalidade</th>
-            <th>Página</th>
-          </tr>
-        </thead>
-        <tbody className="teams--list">
-          {teamList.map((item: any, index: any) => {
-            return (
-              <TeamChampion key={index} items={item} />
-            )
-          })}
-        </tbody>
-      </Table>
+    <Container className={styles.team_champion__container}>
+      {teamList.map((item: any, index: any) => {
+        return <TeamChampion key={index} items={item} />;
+      })}
+    </Container>
   );
-}
+};
 
 export default TeamsChampions;
