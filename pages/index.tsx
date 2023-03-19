@@ -23,10 +23,12 @@ const Home: NextPage = () => {
         <ListGroup.Item>Pilotos</ListGroup.Item>
         <ListGroup.Item>Equipes</ListGroup.Item>
         <ListGroup.Item>
-          Pilotos campeões da F1 <Badge bg="secondary">(em breve)</Badge>
+          Pilotos campeões da F1
+          {/* <Badge bg="secondary">(em breve)</Badge> */}
         </ListGroup.Item>
         <ListGroup.Item>
-          Equipes campeãs da F1 <Badge bg="secondary">(em breve)</Badge>
+          Equipes campeãs da F1
+          {/* <Badge bg="secondary">(em breve)</Badge> */}
         </ListGroup.Item>
         {/* <ListGroup.Item disabled> Morbi leo risus</ListGroup.Item> */}
       </ListGroup> <br />
