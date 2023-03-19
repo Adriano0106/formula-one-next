@@ -9,7 +9,7 @@ const Footer = () => {
       <Card.Footer className={`text-muted`}>
         Desenvolvido por:
         <Link href="https://github.com/Adriano0106">
-          <a target="_blank">&nbsp;Adriano Andrade da Silva &nbsp;<FaGithub/></a>
+          <a className={styles.footer__link} target="_blank">&nbsp;Adriano Andrade da Silva &nbsp;<FaGithub/></a>
         </Link>
       </Card.Footer>
     </Card>
