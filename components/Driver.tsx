@@ -2,19 +2,19 @@ import Link from "next/link";
 import styles from "styles/Driver.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { DriversInfo } from 'interfaces/interfaces';
+import { NewDriversInfo } from 'interfaces/interfaces';
 
-const Driver = (driver: DriversInfo) => {
+const Driver = (driver: NewDriversInfo) => {
   return (
     <tr className={styles.driver}>
-      <td>{driver?.items?.permanentNumber}</td>
+      <td>{driver?.items?.carNumber}</td>
       <td>
-        {driver?.items?.givenName} {driver?.items?.familyName}
+        {driver?.items?.driver}
       </td>
-      <td>{driver?.items?.code}</td>
-      <td>{driver?.items?.nationality}</td>
+      <td>{driver?.items?.team}</td>
+      <td>{driver?.items?.country}</td>
       <td>
-        <Link href={driver?.items?.url}>
+        <Link href={driver?.items?.wikipediaPage}>
           <a>
             <FontAwesomeIcon icon={faExternalLink} />
           </a>

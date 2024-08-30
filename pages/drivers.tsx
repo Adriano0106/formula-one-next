@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Driver from "components/Driver";
 import Request from "components/Request";
 import styled from "styled-components";
-import { DriverInfo, DriversInfo } from "interfaces/interfaces";
+import { NewDriverInfo } from "interfaces/interfaces";
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -19,11 +19,12 @@ let order = "desc";
 const Drivers: NextPage = () => {
   var yearSearch = new Date().getFullYear();
   const [year, setYear] = useState(yearSearch);
-  const [driverList, setDriverList] = useState(Array<DriverInfo>);
+  const [driverList, setDriverList] = useState(Array<NewDriverInfo>);
 
   useEffect(() => {
     const loadAll = async () => {
-      let list = await Request.driversList(year);
+      // let list = await Request.driversList(year);
+      let list = await Request.newDriversList(year);
       let data = list[0].items;
       setDriverList(data);
     };
@@ -35,19 +36,19 @@ const Drivers: NextPage = () => {
     setYear(newYear);
   }
 
-  const orderAsc = (a: DriverInfo, b: DriverInfo) => {
-    if (Number(a.permanentNumber) < Number(b.permanentNumber)) return -1;
-    if (Number(a.permanentNumber) > Number(b.permanentNumber)) return 1;
+  const orderAsc = (a: NewDriverInfo, b: NewDriverInfo) => {
+    if (Number(a.carNumber) < Number(b.carNumber)) return -1;
+    if (Number(a.carNumber) > Number(b.carNumber)) return 1;
     return 0;
   };
 
-  const orderDesc = (a: DriverInfo, b: DriverInfo) => {
-    if (Number(a.permanentNumber) < Number(b.permanentNumber)) return 1;
-    if (Number(a.permanentNumber) > Number(b.permanentNumber)) return -1;
+  const orderDesc = (a: NewDriverInfo, b: NewDriverInfo) => {
+    if (Number(a.carNumber) < Number(b.carNumber)) return 1;
+    if (Number(a.carNumber) > Number(b.carNumber)) return -1;
     return 0;
   };
 
-  const reorderDrivers = (list: Array<DriverInfo>) => {
+  const reorderDrivers = (list: Array<NewDriverInfo>) => {
     if (order == "desc") {
       list.sort(orderAsc);
       order = "asc";
@@ -69,12 +70,12 @@ const Drivers: NextPage = () => {
         <option value="2022">2022</option>
         <option value="2021">2021</option>
         <option value="2020">2020</option>
-        <option value="2019">2019</option>
+        {/* <option value="2019">2019</option>
         <option value="2018">2018</option>
         <option value="2017">2017</option>
         <option value="2016">2016</option>
         <option value="2015">2015</option>
-        <option value="2014">2014</option>
+        <option value="2014">2014</option> */}
       </Form.Select>
       <br />
       <Table responsive striped bordered hover size="sm">
@@ -87,15 +88,15 @@ const Drivers: NextPage = () => {
               Número
             </th>
             <th>Piloto</th>
-            <th>Código</th>
+            <th>Equipe</th>
             <th>Nacionalidade</th>
             <th>Página</th>
           </tr>
         </thead>
         <tbody className="drivers--list">
-          {driverList.map((driver: DriverInfo) => {
+          {driverList.map((driver: NewDriverInfo) => {
             return (
-              <Driver key={Number(driver?.permanentNumber)} items={driver} />
+              <Driver key={Number(driver?.carNumber)} items={driver} />
             );
           })}
         </tbody>

@@ -1,7 +1,5 @@
 const API_BASE = "https://ergast.com/api/f1";
-const NEW_API_BASE = "https://formuladatabase.vercel.app/api";
-import axios from 'axios';
-
+const NEW_API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
 const requestAPI = async (endpoint: String, type: String) => {
   const req = await fetch(`${API_BASE}${endpoint}`);
@@ -25,9 +23,7 @@ const requestAPI = async (endpoint: String, type: String) => {
 };
 
 const newRequestAPI = async (endpoint: String, type: String) => {
-  console.log(`${NEW_API_BASE}${endpoint}`)
   const req = await fetch(`${NEW_API_BASE}${endpoint}`);
-  console.log('1', req)
   const json = await req.json();
 
   if (type == "NewDrivers" && json) {
@@ -41,27 +37,27 @@ const requests = {
       {
         slug: "drivers",
         title: `Formula One Drivers ${year}`,
-        items: await requestAPI(`/${year}/drivers.json`, "Drivers"),
+        items: await newRequestAPI(`/${year}/drivers.json`, "NewDrivers"),
+      },
+    ];
+  },
+  newDriversList: async (year: Number) => {
+    return [
+      {
+        slug: "drivers",
+        title: `Formula One Drivers ${year}`,
+        items: await newRequestAPI(`/drivers/${year}`, "NewDrivers"),
       },
     ];
   },
   // newDriversList: async (year: Number) => {
-  //   return [
-  //     {
-  //       slug: "drivers",
-  //       title: `Formula One Drivers ${year}`,
-  //       items: await newRequestAPI(`/drivers/${year}`, "NewDrivers"),
-  //     },
-  //   ];
+  //   try {
+  //     const response = await axios.get(`${NEW_API_BASE}/drivers/${year}`);
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
   // },
-  newDriversList: async (year: Number) => {
-    try {
-      const response = await axios.get(`${NEW_API_BASE}/drivers/${year}`);
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
-  },
   teamsList: async (year: Number) => {
     return [
       {
