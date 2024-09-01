@@ -26,7 +26,10 @@ const newRequestAPI = async (endpoint: String, type: String) => {
   const req = await fetch(`${NEW_API_BASE}${endpoint}`);
   const json = await req.json();
 
-  if (type == "NewDrivers" && json) {
+  if (type == "Drivers" && json) {
+    return json;
+  }
+  if (type == "Drivers Champions" && json) {
     return json;
   }
 };
@@ -41,23 +44,6 @@ const requests = {
       },
     ];
   },
-  newDriversList: async (year: Number) => {
-    return [
-      {
-        slug: "drivers",
-        title: `Formula One Drivers ${year}`,
-        items: await newRequestAPI(`/drivers/${year}`, "NewDrivers"),
-      },
-    ];
-  },
-  // newDriversList: async (year: Number) => {
-  //   try {
-  //     const response = await axios.get(`${NEW_API_BASE}/drivers/${year}`);
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // },
   teamsList: async (year: Number) => {
     return [
       {
@@ -82,6 +68,25 @@ const requests = {
         slug: "teamsChampions",
         title: `Formula One Teams Champions`,
         items: await requestAPI(`/constructorStandings/1.json?limit=100`, "Teams Champions"),
+      },
+    ];
+  },
+  newDriversList: async (year: Number) => {
+    return [
+      {
+        slug: "drivers",
+        title: `Formula One Drivers ${year}`,
+        items: await newRequestAPI(`/drivers/${year}`, "Drivers"),
+      },
+    ];
+  },
+
+  newDriversChampionsList: async () => {
+    return [
+      {
+        slug: "driversChampions",
+        title: `Formula One Drivers Champions`,
+        items: await newRequestAPI(`/champions/drivers`, "Drivers Champions"),
       },
     ];
   },

@@ -31,19 +31,6 @@ export interface DriverInfo {
   url: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
 }
 
-export interface NewDriverInfo {
-  driver: String | "N/A",
-  team: String | "N/A",
-  country: String | "N/A",
-  carNumber: String,
-  debutSeason: Number,
-  wikipediaPage: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
-}
-
-export interface NewDriversInfo {
-  items: NewDriverInfo;
-}
-
 export interface StandingsInfo {
   Constructors: Array<TeamInfo>,
   Driver: DriverInfo,
@@ -71,4 +58,31 @@ export interface TeamChampionInfo {
     round: String | "N/A";
     season: String | "N/A";
   };
+}
+
+// new
+export interface NewDriverInfo {
+  driver: String | "N/A",
+  team: String | "N/A",
+  country: String | "N/A",
+  carNumber: String,
+  debutSeason: Number,
+  wikipediaPage: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
+}
+
+export interface NewDriversInfo {
+  items: NewDriverInfo;
+}
+
+export interface NewDriverChampionInfo {
+  year: Number,
+  driver: String | "N/A",
+  team: String | "N/A",
+  carNumber: Number,
+  nationality: String | "N/A",
+  wikipediaPage: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
+}
+
+export interface NewDriversChampionInfo {
+  items: NewDriverChampionInfo
 }
