@@ -6,7 +6,6 @@ import { NewDriversChampionInfo } from "interfaces/interfaces";
 import Card from "react-bootstrap/Card";
 
 const DriverChampion = (driver: NewDriversChampionInfo) => {
-  console.log('etste', driver)
   return (
     <Card className={styles.driver_champion__card} style={{ width: "18rem" }}>
       <Card.Body>
@@ -26,7 +25,6 @@ const DriverChampion = (driver: NewDriversChampionInfo) => {
             </a>
           </Link>
         </Card.Text>
-        {/* <Card.Link href="#">Another Link</Card.Link> */}
       </Card.Body>
     </Card>
   );
