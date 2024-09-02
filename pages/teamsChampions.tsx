@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import TeamChampion from "components/TeamChampion";
 import Request from "components/Request";
-import styled from "styled-components";
 import styles from "styles/TeamChampion.module.css";
 import Container from "react-bootstrap/Container";
 
@@ -11,7 +10,7 @@ const TeamsChampions: NextPage = () => {
 
   useEffect(() => {
     const loadAll = async () => {
-      let list = await Request.teamsChampionsList();
+      let list = await Request.newTeamsChampionsList();
       let data = list[0].items;
       setTeamList(data);
     };

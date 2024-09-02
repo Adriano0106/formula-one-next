@@ -86,3 +86,13 @@ export interface NewDriverChampionInfo {
 export interface NewDriversChampionInfo {
   items: NewDriverChampionInfo
 }
+
+export interface NewTeamChampionInfo {
+  year: Number,
+  team: String | "N/A",
+  wikipediaPage: UrlObject | "https://en.wikipedia.org/wiki/Formula_One"
+}
+
+export interface NewTeamsChampionInfo {
+  items: NewTeamChampionInfo
+}

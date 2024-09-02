@@ -32,6 +32,9 @@ const newRequestAPI = async (endpoint: String, type: String) => {
   if (type == "Drivers Champions" && json) {
     return json;
   }
+  if (type == "Teams Champions" && json) {
+    return json;
+  }
 };
 
 const requests = {
@@ -87,6 +90,16 @@ const requests = {
         slug: "driversChampions",
         title: `Formula One Drivers Champions`,
         items: await newRequestAPI(`/champions/drivers`, "Drivers Champions"),
+      },
+    ];
+  },
+
+  newTeamsChampionsList: async () => {
+    return [
+      {
+        slug: "teamsChampions",
+        title: `Formula One Teams Champions`,
+        items: await newRequestAPI(`/champions/teams`, "Teams Champions"),
       },
     ];
   },
