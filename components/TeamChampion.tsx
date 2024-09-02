@@ -13,7 +13,7 @@ const TeamChampion = (team: NewTeamsChampionInfo) => {
           {team?.items?.team}
         </Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
-          {team?.items?.year}
+          {team?.items?.year.toString()}
         </Card.Subtitle>
         {/* <Card.Text>
         {team?.items?.nationality}
