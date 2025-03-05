@@ -4,7 +4,8 @@ Esta é uma aplicação Next voltada a apresentar algumas informações sobre a 
 
 As informações são coletadas atrás da Ergast Developer API, disponível em https://ergast.com/mrd/
 
-#### Obs: A Ergast API será DESCONTINUADA no final do ano (2024) devido a isso a apicação irá sofrer alterações para trazer as mesmas informações sem necessitar consultar essa API.
+#### Obs: A Ergast API será DESCONTINUADA no final do ano (2024) devido a isso a apicação está passando por alterações para trazer as mesmas informações sem necessitar consultar essa API.
+A nova API a ser consultado está nesse projeto [Formula One Database](https://github.com/Adriano0106/Formula-One-Database)
 
 ## Visualização
 
