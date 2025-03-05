@@ -74,6 +74,18 @@ export interface NewDriversInfo {
   items: NewDriverInfo;
 }
 
+export interface NewTeamInfo {
+  name: String | "N/A",
+  nationality: String | "N/A",
+  debutYear: Number,
+  wikipediaPage: UrlObject | "https://en.wikipedia.org/wiki/Formula_One",
+  message?: String | "N/A"
+}
+
+export interface NewTeamsInfo {
+  items: NewTeamInfo;
+}
+
 export interface NewDriverChampionInfo {
   year: Number,
   driver: String | "N/A",
